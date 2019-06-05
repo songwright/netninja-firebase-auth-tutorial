@@ -1,7 +1,8 @@
 // Listen for auth status changes, get data.
+// onSnapshsot sets up a realtime listener for the database.
 auth.onAuthStateChanged(user => {
   if (user) {
-    db.collection('guides').get().then(snapshot => {
+    db.collection('guides').onSnapshot(snapshot => {
       setupGuides(snapshot.docs);
       setupUI(user);
     });
