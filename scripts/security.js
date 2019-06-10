@@ -4,11 +4,14 @@
 
 service cloud.firestore {
   match / databases / { database } / documents {
-    // match docs in the guides collection
-    match /{document=**} {
-      allow read, write;
+
+    // match logged in user doc in users collection
+    match / users / { userID } {
+      allow create: if request.auth.uid != null;
+      allow read: if request.auth.uid == userID;
     }
 
+    // match docs in the guides collection
     // If a logged on user exists, allow read & write.
     match / guides / { guideID } {
       allow read, write: if request.auth.uid != null;
