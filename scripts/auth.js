@@ -1,3 +1,14 @@
+// Add admin cloud function
+const adminForm = document.querySelector('.admin-actions');
+adminForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const adminEmail = document.querySelector('#admin-email').value;
+  const addAdminRole = functions.httpsCallable('addAdminRole'); // This is a callable firebase function.
+  addAdminRole({ email: adminEmail }).then(result => { // Invoke addAdminRole, attach email as data object.
+    console.log(result);
+  });
+});
+
 // Listen for auth status changes, get data.
 // onSnapshsot sets up a realtime listener for the database.
 auth.onAuthStateChanged(user => {
