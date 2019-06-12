@@ -13,7 +13,7 @@ adminForm.addEventListener('submit', (e) => {
 // onSnapshsot sets up a realtime listener for the database.
 auth.onAuthStateChanged(user => {
   if (user) {
-    user.getIdTokenResult().then(getIdTokenResult => { // Is user admin?
+    user.getIdTokenResult().then(idTokenResult => { // Is user admin?
       user.admin = idTokenResult.claims.admin;
       setupUI(user);
     })
