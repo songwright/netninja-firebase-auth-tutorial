@@ -2,4 +2,6 @@
 
 The Net Ninja teaches the basics on Firebase Authentication
 
-YouTube link: https://youtu.be/aN1LnNq4z54
+YouTube link: https://youtu.be/rqz0sy8RDXY
+
+## Lesson 22 - Securing the Cloud Function
