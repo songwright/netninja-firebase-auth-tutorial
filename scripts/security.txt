@@ -14,7 +14,8 @@ service cloud.firestore {
     // match docs in the guides collection
     // If a logged on user exists, allow read & write.
     match / guides / { guideID } {
-      allow read, write: if request.auth.uid != null;
+      allow read: if request.auth.uid != null;
+      allow write: if request.auth.token.admin == true;
     }
   }
 }
