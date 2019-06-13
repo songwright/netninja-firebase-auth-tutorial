@@ -64,6 +64,9 @@ signupForm.addEventListener('submit', (e) => {
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     signupForm.reset();
+    signupForm.querySelector('.error').innerHTML = '';
+  }).catch(err => {
+    signupForm.querySelector('.error').innerHTML = err.message;
   });
 });
 
