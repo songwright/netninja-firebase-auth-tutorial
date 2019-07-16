@@ -15,3 +15,5 @@ This installs Firebase tools globally, which will allow you to use Firebase cli.
 `firebase init functions`
 
 This initializes the functions locally. It asks if he wants to proceed. He answers, "yes." Firebase asks which project to link to. He selects this project using the arrow keys and hits Enter. It asks what language you will use to write Cloud functions. He chooses JavaScript. It asks about ESLint. He answers, "no." It asks if you want to install dependencies with npm now. He answers, "yes." Firebase downloads some files needed for Cloud functions.
+
+![2019-07-16](https://user-images.githubusercontent.com/29614473/61320562-7a5c3980-a7be-11e9-9578-6bcbca4c91d1.png)
